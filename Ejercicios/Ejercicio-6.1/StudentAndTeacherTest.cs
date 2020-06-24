@@ -6,16 +6,21 @@ namespace School
     {
         static void Main(string[] args)
         {
-            Persona p1 = new Persona(15);
+            // Persona p1 = new Persona("Pedro", 15);
 
-            p1.Saludar();
+            // p1.Saludar();
 
-            Estudiante e1 = new Estudiante(21);
+            Estudiante e1 = new Estudiante("Jose", 21);
+            Estudiante e2 = new Estudiante("Jose", 21);
             
+            Console.WriteLine(e1.Equals(e2));
+            Console.WriteLine(e1.GetHashCode());
+            Console.WriteLine(e2.GetHashCode());
+
             e1.Saludar();
             e1.ShowAge();
 
-            Profesor profe1 = new Profesor(30,"Programacion");
+            Profesor profe1 = new Profesor("Murray", 30,"Programacion");
 
             profe1.ShowAge();
             profe1.Saludar();
