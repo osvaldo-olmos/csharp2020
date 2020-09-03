@@ -9,9 +9,11 @@ namespace Ejercicio_8._1
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public Persona(int ID, string Nombre, string Apellido)
+        public Persona(int id, string nombre, string apellido)
         {
-
+            ID =id;
+            Nombre = nombre;
+            Apellido =apellido;
         }
 
     }
@@ -66,6 +68,12 @@ namespace Ejercicio_8._1
     public class Curso
     {
         public List<Estudiante> estudiantes { get; set; }
+
+        public Curso()
+        {
+            estudiantes = new List<Estudiante>();
+        }
+
     }
 
 }
