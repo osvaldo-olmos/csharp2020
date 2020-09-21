@@ -2,20 +2,19 @@ using System.Collections.Generic;
 
 namespace Noticias
 {
+    public delegate void Handler(string message);
     public class Emisor
     {
-        List<Suscriptor> suscriptores = new List<Suscriptor>();
-        public void Suscribir(Suscriptor suscriptor)
+        private Handler _handler;
+
+        public void Suscribir(Handler handler)
         {
-            suscriptores.Add(suscriptor);
+            _handler += handler;
         }
 
         public void InformarNoticia(string news)
         {
-            foreach (var item in suscriptores)
-            {
-                item.Informar(news);
-            }
+            _handler(news);
         }
 
     }
